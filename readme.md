@@ -1,20 +1,30 @@
-sistema monolítico modular
+# Sistema Monolítico Modular
 
-objetivos:
-- praticar comunicação interna entre módulos usando facade
-- praticar comunicação externa
+## Objetivos
+- Praticar comunicação interna entre módulos usando **facade**
+- Praticar comunicação externa
 
-princípios e diretrizes:
-- uso de facades
-- clean architecture
-- design patterns de ddd
+## Princípios e Diretrizes
+- Uso de facades
+- Clean architecture
+- Design patterns de DDD
 
-projeto:
-- codestore: implementação de módulos/contextos do domínio de um ecommerce
+## Projeto
+- **codestore**: implementação de módulos/contextos do domínio de um ecommerce
 
-módulos:
-- product
+## Módulos
+- Product
 
-como executar o projeto:
-- instalar o nodejs
-- executar: npm i
+## Como Executar o Projeto
+
+1. Instale o [Node.js](https://nodejs.org/)
+2. Execute o comando:
+   ```
+   npm i
+   ```
+
+### Executar Testes
+
+```
+npm run test
+```
