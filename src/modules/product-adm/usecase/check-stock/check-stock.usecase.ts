@@ -9,19 +9,12 @@ export default class CheckStockUseCase {
   }
 
   async execute(input: CheckStockInputDto): Promise<CheckStockOutputDto> {
-    const props = {
-      productId: input.productId
-    };
 
-    const result = await this._productRepository.find(props.productId);
-
-    if (!result) {
-      throw new Error("Product not found");
-    }
+    const product = await this._productRepository.find(input.productId);
 
     return {
-      productId: result.id.id,
-      stock: result.stock
+      productId: product.id.id,
+      stock: product.stock
     };
   }
 }

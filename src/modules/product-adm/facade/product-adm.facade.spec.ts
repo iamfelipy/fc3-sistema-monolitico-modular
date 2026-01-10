@@ -55,34 +55,21 @@ describe("ProductAdmFacade test", () => {
   it("should check the stock of a product", async () => {
     const productFacade = ProductAdmFacadeFactory.create();
 
-    const product = new Product({
-      id: new Id("1"),
+    const input = {
+      id: "1",
       name: "Product 1",
       description: "Product 1 description",
       purchasePrice: 10,
       stock: 10,
-    })
+    }
 
-    await ProductModel.create({
-      id: product.id.id,
-      name: product.name,
-      description: product.description,
-      purchasePrice: product.purchasePrice,
-      stock: product.stock,
-      createdAt: new Date(),
-      updatedAt: new Date(),
+    await productFacade.addProduct(input)
+
+    const result = await productFacade.checkStock({
+      productId: "1"
     });
 
-    const input = {
-      productId: "1",
-    };
-
-    const result = await productFacade.checkStock(input);
-
-    const productDatabase = await ProductModel.findOne({ where: { id: "1" } });
-
-    expect(productDatabase).toBeDefined();
-    expect(result.productId).toBe(input.productId);
-    expect(result.stock).toBe(product.stock);
+    expect(result.productId).toBe(input.id);
+    expect(result.stock).toBe(input.stock);
   });
 });
