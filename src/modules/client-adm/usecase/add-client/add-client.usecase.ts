@@ -1,6 +1,6 @@
-import Id from "../../@shared/domain/value-object/id.value-object";
-import Client from "../domain/client.entity";
-import ClientGateway from "../gateway/client.gateway";
+import Id from "../../../@shared/domain/value-object/id.value-object";
+import Client from "../../domain/client.entity";
+import ClientGateway from "../../gateway/client.gateway";
 import { AddClientInputDto, AddClientOutputDto } from "./add-client.dto";
 
 
