@@ -13,7 +13,9 @@
 - **codestore**: implementação de módulos/contextos do domínio de um ecommerce
 
 ## Módulos
-- Product
+- product-adm: administração de produtos
+- store-catalog: exibição de produtos
+- client-adm: administração de clientes
 
 ## Como Executar o Projeto
 
