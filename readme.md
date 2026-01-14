@@ -16,6 +16,7 @@
 - product-adm: administração de produtos
 - store-catalog: exibição de produtos
 - client-adm: administração de clientes
+- payment: processar pagamento
 
 ## Como Executar o Projeto
 
