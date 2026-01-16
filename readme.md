@@ -17,6 +17,7 @@
 - store-catalog: exibição de produtos
 - client-adm: administração de clientes
 - payment: processar pagamento
+- invoice: geração de nota fiscal
 
 ## Como Executar o Projeto
 
