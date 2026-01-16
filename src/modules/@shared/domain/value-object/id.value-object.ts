@@ -5,6 +5,9 @@ export default class Id implements ValueObject {
   private _id: string;
 
   constructor(id?: string) {
+    if (id === '') {
+      throw new Error("Id cannot be an empty string");
+    }
     this._id = id || uuidv4();
   }
 
