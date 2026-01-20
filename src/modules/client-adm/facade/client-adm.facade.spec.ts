@@ -5,8 +5,9 @@ import ClientRepository from "../repository/client.repository";
 import AddClientUseCase from "../usecase/add-client/add-client.usecase";
 import FindClientUseCase from "../usecase/find-client/find-client.usecase";
 import ClientAdmFacade from "./client-adm.facade";
+import Address from "../../@shared/domain/value-object/address.value-object";
 
-describe("ClientAdmFacade test", () => {
+describe("Client AdmFacade test", () => {
   let sequelize: Sequelize;
 
   beforeEach(async () => {
@@ -17,7 +18,7 @@ describe("ClientAdmFacade test", () => {
       sync: { force: true },
     });
 
-    await sequelize.addModels([ClientModel]);
+    sequelize.addModels([ClientModel]);
     await sequelize.sync();
   });
 
@@ -37,7 +38,15 @@ describe("ClientAdmFacade test", () => {
       id: "1",
       name: "Client 1",
       email: "x@x.com",
-      address: "Address 1",
+      document: "1234-5678",
+      address: {
+        street: "Rua 123",
+        number: "99",
+        complement: "Casa Verde",
+        city: "Criciúma",
+        state: "SC",
+        zipCode: "88888-888"
+      }
     };
 
     await facade.add(input);
@@ -47,7 +56,13 @@ describe("ClientAdmFacade test", () => {
     expect(client).toBeDefined();
     expect(client.name).toBe(input.name);
     expect(client.email).toBe(input.email);
-    expect(client.address).toBe(input.address);
+    expect(client.document).toBe(input.document);
+    expect(client.street).toBe(input.address.street);
+    expect(client.number).toBe(input.address.number);
+    expect(client.complement).toBe(input.address.complement);
+    expect(client.city).toBe(input.address.city);
+    expect(client.state).toBe(input.address.state);
+    expect(client.zipcode).toBe(input.address.zipCode);
   });
 
   it("should find a client", async () => {
@@ -65,7 +80,15 @@ describe("ClientAdmFacade test", () => {
       id: "1",
       name: "Client 1",
       email: "x@x.com",
-      address: "Address 1",
+      document: "1234-5678",
+      address: {
+        street: "Rua 123",
+        number: "99",
+        complement: "Casa Verde",
+        city: "Criciúma",
+        state: "SC",
+        zipCode: "88888-888"
+      }
     };
 
     await facade.add(input);
@@ -76,6 +99,12 @@ describe("ClientAdmFacade test", () => {
     expect(client.id).toBe(input.id);
     expect(client.name).toBe(input.name);
     expect(client.email).toBe(input.email);
-    expect(client.address).toBe(input.address);
+    expect(client.document).toBe(input.document)
+    expect(client.address.street).toBe(input.address.street)
+    expect(client.address.number).toBe(input.address.number)
+    expect(client.address.complement).toBe(input.address.complement)
+    expect(client.address.city).toBe(input.address.city)
+    expect(client.address.state).toBe(input.address.state)
+    expect(client.address.zipCode).toBe(input.address.zipCode)
   });
 });
