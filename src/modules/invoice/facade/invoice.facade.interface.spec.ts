@@ -48,7 +48,7 @@ describe("InvoiceFacade test", () => {
       ]
     };
 
-    await facade.add(input);
+    await facade.create(input);
 
     const invoice = await InvoiceModel.findOne({
       where: { name: input.name },

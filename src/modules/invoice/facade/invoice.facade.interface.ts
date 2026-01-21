@@ -1,4 +1,4 @@
-export interface AddInvoiceFacadeInputDto {
+export interface CreateInvoiceFacadeInputDto {
   name: string;
   document: string;
   street: string;
@@ -12,6 +12,18 @@ export interface AddInvoiceFacadeInputDto {
     name: string;
     price: number;
   }[];
+}
+
+export interface CreateInvoiceFacadeOutputDto {
+  id: string;
+
+  items: {
+    id: string;
+    name: string;
+    price: number;
+  }[];
+
+  total: number;
 }
 
 export interface FindInvoiceFacadeInputDto {
@@ -40,6 +52,6 @@ export interface FindInvoiceFacadeOutputDto {
 }
 
 export default interface InvoiceFacadeInterface {
-  add(input: AddInvoiceFacadeInputDto): Promise<void>;
+  create(input: CreateInvoiceFacadeInputDto): Promise<CreateInvoiceFacadeOutputDto>;
   find(input: FindInvoiceFacadeInputDto): Promise<FindInvoiceFacadeOutputDto>;
 }
