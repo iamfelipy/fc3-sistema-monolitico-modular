@@ -18,6 +18,7 @@
 - client-adm: administração de clientes
 - payment: processar pagamento
 - invoice: geração de nota fiscal
+- checkout: criação da ordem
 
 ## Como Executar o Projeto
 
