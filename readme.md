@@ -20,6 +20,9 @@
 - invoice: geração de nota fiscal
 - checkout: criação da ordem
 
+## Quantidade total de testes
+Número total de testes: 37
+
 ## Como Executar o Projeto
 
 1. Instale o [Node.js](https://nodejs.org/)
@@ -29,6 +32,7 @@
    ```
 
 ### Executar Testes
+
 
 ```
 npm run test
