@@ -62,7 +62,7 @@ describe("Client AdmFacade test", () => {
     expect(client.complement).toBe(input.address.complement);
     expect(client.city).toBe(input.address.city);
     expect(client.state).toBe(input.address.state);
-    expect(client.zipcode).toBe(input.address.zipCode);
+    expect(client.zipCode).toBe(input.address.zipCode);
   });
 
   it("should find a client", async () => {
