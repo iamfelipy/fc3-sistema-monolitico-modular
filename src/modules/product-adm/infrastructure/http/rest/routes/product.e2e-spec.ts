@@ -5,6 +5,8 @@ import { Umzug } from 'umzug'
 import { ProductModel } from '../../../../repository/product.model'
 import { migrator } from '../../../../../@shared/infrastructure/repository/sequelize/config-migrations/migrator'
 import { productsRootRouter } from './product.routes'
+import Product from '../../../../domain/product.entity'
+import Id from '../../../../../@shared/domain/value-object/id.value-object'
 
 describe("product e2e test", () => {
 
@@ -53,5 +55,33 @@ describe("product e2e test", () => {
     expect(response.body.purchasePrice).toBe(22)
     expect(response.body.stock).toBe(3)
 
+  })
+  it("should find a product", async () => {
+
+    const product = new Product({
+        id: new Id("1"),
+        name: "Test Product",
+        description: "Test product description",
+        purchasePrice: 100,
+        stock: 10,
+        createdAt: new Date(),
+        updatedAt: new Date()
+    })
+    
+    await ProductModel.create({
+      id: product.id.id,
+      name: product.name,
+      description: product.description,
+      purchasePrice: product.purchasePrice,
+      stock: product.stock,
+      createdAt: product.createdAt,
+      updatedAt: product.updatedAt,
+    })
+
+    const response = await request(app).get(`/products/${product.id.id}/stock`);
+
+    expect(response.status).toBe(200);
+    expect(response.body.productId).toBe(product.id.id);
+    expect(response.body.stock).toBe(product.stock);
   })
 })
