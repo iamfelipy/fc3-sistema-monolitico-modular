@@ -31,9 +31,20 @@ Número total de testes: 37
    npm i
    ```
 
-### Executar Testes
-
+### Comandos úteis
 
 ```
+teste
 npm run test
+
+migration
+  criar migration
+    npm run migrate -- create --name create-invoice.ts
+```
+
+### endpoints http disponiveis
+```
+/clients
+/products
+/invoices
 ```

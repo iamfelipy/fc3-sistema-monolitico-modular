@@ -31,7 +31,6 @@ export class InvoiceModel extends Model {
   @Column({ allowNull: false })
   state: string;
 
-  @Column({ allowNull: false })
   @Column({ allowNull: false, field: "zip_code" })
   zipCode: string;
 
