@@ -17,6 +17,7 @@ export const migrator = (
     },
     context: sequelize,
     storage: new SequelizeStorage({ sequelize }),
-    logger: console
+    logger: undefined
+    //logger: console
   })
 }
