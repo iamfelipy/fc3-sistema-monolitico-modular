@@ -4,17 +4,12 @@ import request from "supertest"
 import { Umzug } from 'umzug'
 import { migrator } from '../../../../../@shared/infrastructure/repository/sequelize/config-migrations/migrator'
 import Id from '../../../../../@shared/domain/value-object/id.value-object'
-import { clientsRootRouter } from './client.routes'
 import { ClientModel } from '../../../../repository/client.model'
 import Client from '../../../../domain/client.entity'
 import Address from '../../../../../@shared/domain/value-object/address.value-object'
+import { app } from '../../../../../@shared/infrastructure/http/rest/express'
 
 describe("client e2e test", () => {
-
-  const app: Express = express()
-  app.use(express.json())
-  app.use("/", clientsRootRouter)
-
   let sequelize: Sequelize
 
   let migration: Umzug<any>;

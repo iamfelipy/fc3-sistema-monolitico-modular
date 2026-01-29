@@ -1,5 +1,4 @@
 import express, { Request, Response } from 'express';
-import { mainRouter } from '../../../../../@shared/infrastructure/http/rest/express';
 import ClientRepository from '../../../../repository/client.repository';
 import AddClientUseCase from '../../../../usecase/add-client/add-client.usecase';
 import { AddClientInputDto } from '../../../../usecase/add-client/add-client.dto';
@@ -7,10 +6,7 @@ import { FindClientInputDto } from '../../../../usecase/find-client/find-client.
 import FindClientUseCase from '../../../../usecase/find-client/find-client.usecase';
 
 
-export const clientsRootRouter = express.Router();
-const clientsRouter = express.Router();
-clientsRootRouter.use('/clients', clientsRouter)
-mainRouter.use("/", clientsRootRouter);
+export const clientsRouter = express.Router();
 
 clientsRouter.post("/", async (req: Request, res: Response) => {
   

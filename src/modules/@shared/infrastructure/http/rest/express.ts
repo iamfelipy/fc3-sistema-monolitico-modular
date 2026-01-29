@@ -1,11 +1,18 @@
 import express, { Express } from "express";
+import { productsRouter } from "../../../../product-adm/infrastructure/http/rest/routes/product.routes";
+import { clientsRouter } from "../../../../client-adm/infrastructure/http/rest/routes/client.routes";
+import { invoicesRouter } from "../../../../invoice/infrastructure/http/rest/routes/invoice.routes";
 
-export const mainRouter = express.Router();
 
 export const app: Express = express();
-// faz o parse do body das requisições
+
 app.use(express.json());
-app.use("/", mainRouter);
+
+// routes
+app.use('/products', productsRouter)
+app.use('/clients', clientsRouter)
+app.use('/invoices', invoicesRouter)
+
 
 // export let sequelize: Sequelize;
 

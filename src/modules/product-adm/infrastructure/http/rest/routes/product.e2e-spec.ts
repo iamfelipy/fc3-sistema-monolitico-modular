@@ -4,15 +4,11 @@ import request from "supertest"
 import { Umzug } from 'umzug'
 import { ProductModel } from '../../../../repository/product.model'
 import { migrator } from '../../../../../@shared/infrastructure/repository/sequelize/config-migrations/migrator'
-import { productsRootRouter } from './product.routes'
 import Product from '../../../../domain/product.entity'
 import Id from '../../../../../@shared/domain/value-object/id.value-object'
+import { app } from '../../../../../@shared/infrastructure/http/rest/express'
 
 describe("product e2e test", () => {
-
-  const app: Express = express()
-  app.use(express.json())
-  app.use("/", productsRootRouter)
 
   let sequelize: Sequelize
 
