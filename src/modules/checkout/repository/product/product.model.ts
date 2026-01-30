@@ -1,4 +1,5 @@
-import { Column, Model, PrimaryKey, Table } from "sequelize-typescript";
+import { BelongsToMany, Column, Model, PrimaryKey, Table } from "sequelize-typescript";
+import { OrderModel } from "../order/order.model";
 
 @Table({
   tableName: "products",
@@ -18,6 +19,13 @@ export class ProductModel extends Model {
 
   @Column({ allowNull: false })
   salesPrice: number;
+
+  @BelongsToMany(() => OrderModel, {
+    through: "orders_products",
+    foreignKey: "product_id",
+    otherKey: "order_id",
+  })
+  orders: OrderModel[];
 
   @Column({ allowNull: false, field: 'created_at' })
   createdAt: Date;

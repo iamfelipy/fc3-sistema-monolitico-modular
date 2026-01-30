@@ -17,7 +17,7 @@ export class OrderModel extends Model {
   status: string;
 
   @ForeignKey(() => ClientModel)
-  @Column({ allowNull: false })
+  @Column({ allowNull: false, field: 'client_id' })
   clientId: string;
 
   @BelongsTo(() => ClientModel)
