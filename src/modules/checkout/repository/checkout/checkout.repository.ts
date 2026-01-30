@@ -46,7 +46,7 @@ export class CheckoutRepository implements CheckoutGateway {
           orderDb.client.complement,
           orderDb.client.city,
           orderDb.client.state,
-          orderDb.client.zipcode
+          orderDb.client.zipCode
         ),
         createdAt: orderDb.client.createdAt,
         updatedAt: orderDb.client.updatedAt,

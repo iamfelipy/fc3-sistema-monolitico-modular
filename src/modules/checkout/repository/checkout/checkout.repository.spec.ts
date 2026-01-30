@@ -56,7 +56,7 @@ describe("checkout repository test", () => {
       complement: client1.address.complement,
       city: client1.address.city,
       state: client1.address.state,
-      zipcode: client1.address.zipCode,
+      zipCode: client1.address.zipCode,
       createdAt: client1.createdAt,
       updatedAt: client1.updatedAt,
     });
@@ -157,7 +157,7 @@ describe("checkout repository test", () => {
       complement: client1.address.complement,
       city: client1.address.city,
       state: client1.address.state,
-      zipcode: client1.address.zipCode,
+      zipCode: client1.address.zipCode,
       createdAt: client1.createdAt,
       updatedAt: client1.updatedAt,
     });
