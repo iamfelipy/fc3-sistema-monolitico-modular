@@ -34,7 +34,7 @@ Número total de testes: 37
 
 ```
 teste
-npm run test
+  npm run test
 
 migration
   criar migration
