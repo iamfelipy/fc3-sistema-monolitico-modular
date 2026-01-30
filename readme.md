@@ -1,8 +1,7 @@
 # Sistema Monolítico Modular
 
 ## Objetivos
-- Praticar comunicação interna entre módulos usando **facade**
-- Praticar comunicação externa
+- Praticar comunicação entre módulos usando **facade**
 
 ## Princípios e Diretrizes
 - Uso de facades
@@ -31,7 +30,7 @@ Número total de testes: 37
    npm i
    ```
 
-### Comandos úteis
+## Comandos úteis
 
 ```
 teste
@@ -42,9 +41,10 @@ migration
     npm run migrate -- create --name create-invoice.ts
 ```
 
-### endpoints http disponiveis
+## endpoints http disponiveis
 ```
 /clients
 /products
 /invoices
+/checkout
 ```
